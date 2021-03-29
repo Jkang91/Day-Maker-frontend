@@ -26,7 +26,7 @@ function NewDay({ currentUser, days, setDays }) {
             date: `${year}` + `-` + `${month}` + `-` + `${parseInt(day) + 1}`
         }
         
-        fetch(`http://localhost:3000/days`, {
+        fetch(`${process.env.REACT_APP_RAILS_URL}/days`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

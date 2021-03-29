@@ -16,7 +16,7 @@ function App() {
     const token = localStorage.getItem("token");
     if (token) {
       console.log(token)
-      fetch("http://localhost:3000/me", {
+      fetch(`${process.env.REACT_APP_RAILS_URL}/me`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

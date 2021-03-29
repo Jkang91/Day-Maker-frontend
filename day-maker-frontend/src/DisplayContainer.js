@@ -27,7 +27,7 @@ function DisplayContainer({currentUser, setCurrentUser}) {
 
 
     useEffect(() => {
-        fetch(`http://localhost:3000/restaurants`)
+        fetch(`${process.env.REACT_APP_RAILS_URL}/restaurants`)
             .then(resp => resp.json())
             .then(restaurantsArray => {
                 setRestaurants(restaurantsArray)
@@ -35,7 +35,7 @@ function DisplayContainer({currentUser, setCurrentUser}) {
     }, [])
 
     useEffect(() => {
-        fetch(`http://localhost:3000/attractions`)
+        fetch(`${process.env.REACT_APP_RAILS_URL}/attractions`)
             .then(resp => resp.json())
             .then(attractionsArray => {
                 setAttractions(attractionsArray)
@@ -43,7 +43,7 @@ function DisplayContainer({currentUser, setCurrentUser}) {
     }, [])
 
     useEffect(() => {
-        fetch(`http://localhost:3000/attractions/hour/morning`)
+        fetch(`${process.env.REACT_APP_RAILS_URL}/attractions/hour/morning`)
             .then(resp => resp.json())
             .then(attractionsArray => {
                 setMorningAttractions(attractionsArray)
@@ -51,7 +51,7 @@ function DisplayContainer({currentUser, setCurrentUser}) {
     }, [])
 
     useEffect(() => {
-        fetch(`http://localhost:3000/attractions/hour/afternoon`)
+        fetch(`${process.env.REACT_APP_RAILS_URL}/attractions/hour/afternoon`)
             .then(resp => resp.json())
             .then(attractionsArray => {
                 setAfternoonAttractions(attractionsArray)
@@ -59,7 +59,7 @@ function DisplayContainer({currentUser, setCurrentUser}) {
     }, [])
 
     useEffect(() => {
-        fetch(`http://localhost:3000/attractions/hour/evening`)
+        fetch(`${process.env.REACT_APP_RAILS_URL}/attractions/hour/evening`)
             .then(resp => resp.json())
             .then(attractionsArray => {
                 setEveningAttractions(attractionsArray)
@@ -70,7 +70,7 @@ function DisplayContainer({currentUser, setCurrentUser}) {
         console.log(currentUser)
         if(currentUser) {
             
-            fetch(`http://localhost:3000/users/${currentUser.id}/days`)
+            fetch(`${process.env.REACT_APP_RAILS_URL}/users/${currentUser.id}/days`)
                 .then(resp => resp.json())
                 .then(days => {
                     setDays(days)
@@ -80,7 +80,7 @@ function DisplayContainer({currentUser, setCurrentUser}) {
     }, [currentUser])
 
     useEffect(() => {
-        fetch(`http://localhost:3000/restaurants/category/breakfast`)
+        fetch(`${process.env.REACT_APP_RAILS_URL}/restaurants/category/breakfast`)
             .then(resp => resp.json())
             .then(breakfastSpots => {
                 setBreakfastRestaurants(breakfastSpots)
@@ -88,7 +88,7 @@ function DisplayContainer({currentUser, setCurrentUser}) {
     }, [])
 
     useEffect(() => {
-        fetch(`http://localhost:3000/restaurants/category/lunch`)
+        fetch(`${process.env.REACT_APP_RAILS_URL}/restaurants/category/lunch`)
             .then(resp => resp.json())
             .then(lunchSpots => {
                 setLunchRestaurants(lunchSpots)
@@ -96,7 +96,7 @@ function DisplayContainer({currentUser, setCurrentUser}) {
     }, [])
 
     useEffect(() => {
-        fetch(`http://localhost:3000/restaurants/category/dinner`)
+        fetch(`${process.env.REACT_APP_RAILS_URL}/restaurants/category/dinner`)
             .then(resp => resp.json())
             .then(dinnerSpots => {
                 setDinnerRestaurants(dinnerSpots)
@@ -104,7 +104,7 @@ function DisplayContainer({currentUser, setCurrentUser}) {
     }, [])
 
     useEffect(() => {
-        fetch(`http://localhost:3000/day_restaurants`)
+        fetch(`${process.env.REACT_APP_RAILS_URL}/day_restaurants`)
             .then(resp => resp.json())
             .then(dayRests => {
 
@@ -113,7 +113,7 @@ function DisplayContainer({currentUser, setCurrentUser}) {
     }, [])
 
     useEffect(() => {
-        fetch(`http://localhost:3000/day_attractions`)
+        fetch(`${process.env.REACT_APP_RAILS_URL}/day_attractions`)
             .then(resp => resp.json())
             .then(dayAttrs => {
                 setDayAttrs(dayAttrs)

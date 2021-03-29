@@ -27,7 +27,7 @@ function Day({ currentUser, setDays, day, breakfastRests, lunchRests, dinnerRest
 
 
     const getFreshDays = () => {
-        fetch(`http://localhost:3000/users/${currentUser.id}/days`)
+        fetch(`${process.env.REACT_APP_RAILS_URL}/${currentUser.id}/days`)
             .then(resp => resp.json())
             .then(daysArray => {
                 setDays(daysArray)
