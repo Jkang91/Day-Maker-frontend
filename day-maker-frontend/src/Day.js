@@ -269,7 +269,7 @@ function Day({ currentUser, setDays, day, breakfastRests, lunchRests, dinnerRest
     }
 
     const handleDelete = (id) => {
-        fetch(`http://localhost:3000/days/${id}`, {
+        fetch(`${process.env.REACT_APP_RAILS_URL}/days/${id}`, {
             method: 'DELETE'
         })
             .then(deleteDay(id))
