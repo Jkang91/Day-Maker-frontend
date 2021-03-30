@@ -89,7 +89,7 @@ function Day({ currentUser, setDays, day, breakfastRests, lunchRests, dinnerRest
             day_id: day.id,
             restaurant_id: parseInt(newBreakfast)
         }
-        fetch(`http://localhost:3000/day_restaurants/${id}`, {
+        fetch(`${process.env.REACT_APP_RAILS_URL}/day_restaurants/${id}`, {
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json',
@@ -110,7 +110,7 @@ function Day({ currentUser, setDays, day, breakfastRests, lunchRests, dinnerRest
             day_id: day.id,
             restaurant_id: parseInt(newLunch)
         }
-        fetch(`http://localhost:3000/day_restaurants/${id}`, {
+        fetch(`${process.env.REACT_APP_RAILS_URL}/day_restaurants/${id}`, {
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json',
@@ -131,7 +131,7 @@ function Day({ currentUser, setDays, day, breakfastRests, lunchRests, dinnerRest
             day_id: day.id,
             restaurant_id: parseInt(newDinner)
         }
-        fetch(`http://localhost:3000/day_restaurants/${id}`, {
+        fetch(`${process.env.REACT_APP_RAILS_URL}/day_restaurants/${id}`, {
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json',
@@ -152,7 +152,7 @@ function Day({ currentUser, setDays, day, breakfastRests, lunchRests, dinnerRest
             day_id: day.id,
             attraction_id: parseInt(newAttr1)
         }
-        fetch(`http://localhost:3000/day_attractions/${id}`, {
+        fetch(`${process.env.REACT_APP_RAILS_URL}/day_attractions/${id}`, {
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json',
@@ -173,7 +173,7 @@ function Day({ currentUser, setDays, day, breakfastRests, lunchRests, dinnerRest
             day_id: day.id,
             attraction_id: parseInt(newAttr2)
         }
-        fetch(`http://localhost:3000/day_attractions/${id}`, {
+        fetch(`${process.env.REACT_APP_RAILS_URL}/day_attractions/${id}`, {
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json',
@@ -193,7 +193,7 @@ function Day({ currentUser, setDays, day, breakfastRests, lunchRests, dinnerRest
             day_id: day.id,
             attraction_id: parseInt(newAttr3)
         }
-        fetch(`http://localhost:3000/day_attractions/${id}`, {
+        fetch(`${process.env.REACT_APP_RAILS_URL}/day_attractions/${id}`, {
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json',
