@@ -1,10 +1,10 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom'
 import Popup from "reactjs-popup"
 import './style.css'
 
 
-function Day({ currentUser, setDays, day, breakfastRests, lunchRests, dinnerRests, deleteDay, morningAttractions, afternoonAttractions, eveningAttractions }) {
+function Day({ currentUser, setDays, day, breakfastRests, lunchRests, dinnerRests, deleteDay, morningAttractions, afternoonAttractions, eveningAttractions, days }) {
 
     console.log(currentUser)
     const history = useHistory()
@@ -25,14 +25,23 @@ function Day({ currentUser, setDays, day, breakfastRests, lunchRests, dinnerRest
 
     const { user_id, restaurants, attractions, day_restaurants, day_attractions } = day
 
-
     const getFreshDays = () => {
-        fetch(`${process.env.REACT_APP_RAILS_URL}/${currentUser.id}/days`)
+        // setTimeout(() =>
+        // fetch(`${process.env.REACT_APP_RAILS_URL}/days/${currentUser.id}`)
+        fetch(`${process.env.REACT_APP_RAILS_URL}/users/${currentUser.id}/days`)
             .then(resp => resp.json())
             .then(daysArray => {
+                // debugger
+                // if(days.length === 0){
+                //     return <div>Loading...</div>
+                // }
+                // debugger
+                // console.log(daysArray)
                 setDays(daysArray)
             })
+        // , 3000)
     }
+    
 
     let breakfast = ""
     let lunch = ""
@@ -99,6 +108,7 @@ function Day({ currentUser, setDays, day, breakfastRests, lunchRests, dinnerRest
             .then(resp => resp.json())
             .then(updatedBreakfastObj => {
                 // handleUpdate(updatedBreakfastObj)
+                // debugger
                 getFreshDays()
                 setIsEditingBreak(false)
                 history.push("/days")

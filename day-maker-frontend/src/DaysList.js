@@ -5,10 +5,20 @@ import {useState} from 'react';
 function DaysList({ currentUser, days, setDays, breakfastRests, lunchRests, dinnerRests, setDayRests, dayRests, setDayAttrs, dayAttrs, handleUpdate, morningAttractions, eveningAttractions, afternoonAttractions }) {
 
     const [searchTerm, setSearchTerm] = useState("")
-
+    console.log(days)
+    // if(days.length === 0){
+    //     return <div>Loading...</div>
+    // }
+    
     const filteredDays = days.filter((day) => {
         return new Date(day.date).toString().toLowerCase().includes(searchTerm.toLowerCase())
     })
+
+    // setTimeout(() => {
+    //     days.filter((day) => {
+    //         return new Date(day.date).toString().toLowerCase().includes(searchTerm.toLowerCase())
+    //     })
+    // }, 3000)
 
     const deleteDay = (id) => {
         const updatedDays = days.filter((day) => {

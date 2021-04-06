@@ -73,6 +73,7 @@ function DisplayContainer({currentUser, setCurrentUser}) {
             fetch(`${process.env.REACT_APP_RAILS_URL}/users/${currentUser.id}/days`)
                 .then(resp => resp.json())
                 .then(days => {
+                    console.log(days)
                     setDays(days)
                 })
             }
