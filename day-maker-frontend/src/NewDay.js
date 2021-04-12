@@ -23,7 +23,7 @@ function NewDay({ currentUser, days, setDays }) {
 
         const newDayObj = {
             ...formData,
-            date: `${year}` + `-` + `${month}` + `-` + `${parseInt(day)}`
+            date: `${year}` + `-` + `${month}` + `-` + `${parseInt(day) + 1}`
         }
         
         fetch(`${process.env.REACT_APP_RAILS_URL}/days`, {
